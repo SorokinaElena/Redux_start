@@ -1,4 +1,7 @@
 .product_container {
     margin: 40px;
     padding: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
