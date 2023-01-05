@@ -1,0 +1,19 @@
+.product {
+    width: 300px;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+
+    position: relative;
+}
+
+.product p {
+    margin: 1px;
+}
+
+.close_icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
