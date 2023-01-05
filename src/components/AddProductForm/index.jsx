@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { Context } from '../../context';
 import s from './index.module.css'
 
-export default function AddProductForm({addProduct}) {
+export default function AddProductForm() {
+
+    const {addProduct} = useContext(Context);
 
     const submit = (event) => {
         event.preventDefault();
