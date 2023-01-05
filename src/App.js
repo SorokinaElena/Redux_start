@@ -15,10 +15,14 @@ function App() {
     }])
   }
 
+  const deleteProduct = (id) => {
+    setProducts(products.filter(el => el.id !== id))
+  }
+
   return (
     <div>
       <AddProductForm addProduct={addProduct}/>
-      <ProductContainer products={products}/>
+      <ProductContainer products={products} deleteProduct={deleteProduct}/>
     </div>
   );
 }
