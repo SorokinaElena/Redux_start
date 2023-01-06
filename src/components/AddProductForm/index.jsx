@@ -1,15 +1,19 @@
-import React, {useContext} from 'react'
-import { Context } from '../../context';
+import React from 'react'
 import s from './index.module.css'
+import { addProduct } from '../../store/reducers/productReducer'
+import {useDispatch} from 'react-redux'
 
 export default function AddProductForm() {
 
-    const {addProduct} = useContext(Context);
+  const dispatch = useDispatch();
 
     const submit = (event) => {
         event.preventDefault();
         const {title, price} = event.target;
-        addProduct(title.value, price.value);
+        dispatch(addProduct({
+          title: title.value, 
+          price: price.value,
+        }));
         title.value = '';
         price.value = '';
     }

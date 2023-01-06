@@ -1,16 +1,17 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import Product from '../Product'
-import { Context } from '../../context'
+import { useSelector } from 'react-redux'
 import s from './index.module.css'
 
 export default function ProductContainer() {
 
-  const {products} = useContext(Context);
+  const state = useSelector(state => state.products)
+  // console.log(state)
 
   return (
     <div className={s.product_container}>
         {
-            products.map(el => <Product key={el.id} {...el} />)
+            state.map(el => <Product key={el.id} {...el} />)
         }
     </div>
   )
